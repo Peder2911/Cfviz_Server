@@ -1,3 +1,3 @@
-[submodule "app"]
-	path = app
-	url = https://github.com/peder2911/ceasefire_plots
+[submodule "apps/gedapp"]
+	path = apps/gedapp
+	url = https://github.com/Peder2911/gedplots
