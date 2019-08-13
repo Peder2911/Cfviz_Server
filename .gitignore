@@ -1,2 +1,2 @@
-data/*
-!data/.gitkeep
+envfile.env
+run.sh

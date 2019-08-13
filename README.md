@@ -1,5 +1,6 @@
-# Containerized cfplots instance
+# Ceasefire shiny-app server 
 
-## :godmode:
+This is the docker image used to build the server running shiny apps for the
+PRIO / ETH ceasefires project.
 
-Clone, build and run!
+Mount the apps directory @ /srv/shiny-server/apps and add your apps.

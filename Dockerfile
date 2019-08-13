@@ -1,13 +1,15 @@
 FROM rocker/shiny-verse
 
+RUN apt update -y 
+RUN apt install -y libpq-dev
+
 ADD ./shiny-server.conf /etc/shiny-server/shiny-server.conf
 
-RUN Rscript -e "install.packages(c('cowplot','rjson'), requirements = FALSE)"
-RUN Rscript -e "devtools::install_github('peder2911/armour_ever_testy', requirements = FALSE)"
+# Mount your apps here
+RUN mkdir /srv/shiny-server/apps
 
-ADD app /srv/shiny-server/tl
-RUN chown -R shiny:shiny /srv/shiny-server/tl
+#RUN chown -R shiny:shiny /srv/shiny-server/apps
 
 EXPOSE 3838
 
-CMD ["/usr/bin/shiny-server.sh"]
+CMD /usr/bin/shiny-server.sh
